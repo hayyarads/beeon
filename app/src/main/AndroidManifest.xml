@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".Boshqaruv"></activity>
+        <activity android:name=".Rate"></activity>
+        <activity android:name=".Boshqaruv" />
         <activity android:name=".QrScanActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".SplashScreenActivity">
