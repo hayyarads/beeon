@@ -27,6 +27,8 @@ import com.google.zxing.Reader;
 import com.google.zxing.Result;
 import com.google.zxing.common.HybridBinarizer;
 
+import org.greenrobot.eventbus.EventBus;
+
 public class QrScanActivity extends AppCompatActivity implements BarcodeReader.BarcodeReaderListener {
 
 
@@ -47,6 +49,11 @@ public class QrScanActivity extends AppCompatActivity implements BarcodeReader.B
             Uri pickedImage = data.getData();
             // Let's read picked image path using content resolver
             String[] filePath = {MediaStore.Images.Media.DATA};
+
+            EventBus.getDefault().post(new MessageEvent());
+
+
+            finish();
 
             Cursor cursor = getContentResolver().query(pickedImage, filePath, null, null, null);
             if (null != cursor ) {
