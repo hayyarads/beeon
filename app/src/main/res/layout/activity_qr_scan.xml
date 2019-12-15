@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".QrScanActivity">
+
+    <fragment
+        android:id="@+id/barcode_scanner"
+        android:name="com.example.beeon.qrScan.BarcodeReader"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:auto_focus="true"
+        app:use_flash="false"
+        tools:layout="@layout/fragment_barcode_reader" />
+
+    <com.example.beeon.qrScan.ScannerOverLay
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#44000000"
+        app:line_color="@color/orange"
+        app:line_speed="6"
+        app:line_width="4"
+
+        />
+
+</RelativeLayout>
