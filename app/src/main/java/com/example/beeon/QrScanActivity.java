@@ -50,8 +50,6 @@ public class QrScanActivity extends AppCompatActivity implements BarcodeReader.B
             // Let's read picked image path using content resolver
             String[] filePath = {MediaStore.Images.Media.DATA};
 
-            EventBus.getDefault().post(new MessageEvent());
-
 
             finish();
 
@@ -106,6 +104,12 @@ public class QrScanActivity extends AppCompatActivity implements BarcodeReader.B
     }
 
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().post(new MessageEvent());
+
+    }
 
     @Override
     public void onBitmapScanned(SparseArray<Barcode> sparseArray) {

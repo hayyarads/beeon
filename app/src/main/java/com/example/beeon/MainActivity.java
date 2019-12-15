@@ -46,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        mLineardate = findViewById(R.id.linear_dates);
+
         TextViewQueue = findViewById(R.id.tetview_queue);
 
         mButtonControl.setOnClickListener(new View.OnClickListener() {
